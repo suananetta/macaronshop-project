@@ -1,0 +1,61 @@
+@import '../styles/mixins.scss';
+@import '../styles/vars.scss';
+
+header {
+    background: linear-gradient(to top, $white 70%, $beige 30%);
+    color: $black;
+    @include display-setting(row, center, center);
+}
+
+.container {
+    min-width: 1171px;
+}
+.company-info {
+    padding: 16px 0;
+    @include display-setting(row, space-between, center);
+    a {
+        &:not(:last-child) {
+            margin-right: 14px;
+        }
+    }
+}
+.info {
+    @include display-setting(row, center, center);
+}
+.info-item {
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+    @include display-setting(row, center, center);
+}
+.options-info {
+    padding: 16px 0;
+    text-transform: uppercase;
+    @include display-setting(row, center, center);
+    select {
+        text-transform: uppercase;
+        box-sizing: border-box;
+        background-color: transparent; 
+        border: none;
+        @include proxi-font-setting(400, 14px, normal);
+        &:hover {
+            cursor: pointer;
+            font-weight: 600;
+        }
+        option {
+            @include proxi-font-setting(400, 14px, normal); 
+        }
+    }
+}
+.options-info-item {
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+.links {
+    a {
+        &:not(:last-child) {
+            margin-right: 14px;
+        }
+    }
+}

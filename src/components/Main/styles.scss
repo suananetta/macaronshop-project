@@ -1,0 +1,90 @@
+@import '../styles/mixins.scss';
+@import '../styles/vars.scss';
+
+h2 {
+    text-align: center;
+    @include montserrat-font-setting(600, 30px, normal); 
+}
+
+.container {
+    max-width: 1171px;
+}
+.intro {
+    padding: 136px 0 160px;
+    background: url(../../../public/bg-main.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include display-setting(row, flex-end, center);
+}
+.intro-info {
+    width: 50%;
+    align-self: flex-end;
+    @include display-setting(column, center, center);
+    h3 {
+        text-transform: uppercase;
+        @include montserrat-font-setting(600, 22px, normal); 
+    }
+    h1 {
+        @include montserrat-font-setting(600, 42px, normal); 
+    }
+    p {
+        text-align: center;
+        @include proxi-font-setting(400, 18px, normal);
+    }
+}
+.intro-info-item {
+    width: 30%;
+    margin-bottom: 24px;
+    @include display-setting(row, space-between, center);
+    @include montserrat-font-setting(600, 16px, normal); 
+    hr {
+        width: 20%;
+        height: 1px;
+    }
+}
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+.links {
+    margin-top: 20px;
+    @include display-setting(row, space-between, center);
+    flex-wrap: wrap;
+}
+.link-card {
+    min-height: 260px;
+    padding: 36px;
+    margin-right: 31px;
+    margin-bottom: 26px;
+    flex: 0 1 47%;
+    @include display-setting(column, space-between, center);
+    a {
+        img {
+            margin-left: 13px;
+        }
+        @include montserrat-font-setting(600, 20px, normal); 
+    }
+    p {
+        text-align: center;
+        @include proxi-font-setting(400, 16px, normal);
+    }
+    &.item0 {
+        background: linear-gradient(to top left, $peach 50%, rgba($peach, 0.7) 50%);
+    }
+    &.item1 {
+        background: linear-gradient(to top right, $pink 50%, rgba($pink, 0.7) 50%);
+    }
+    &.item2 {
+        background: linear-gradient(to bottom left, $green 50%, rgba($green, 0.7) 50%);
+    }
+    &.item3 {
+        background: linear-gradient(to bottom right, $gray-pink 50%, rgba($gray-pink, 0.7) 50%);
+    }
+    &.item4 {
+        background: linear-gradient(to top left, $sea 50%, rgba($sea, 0.7) 50%);
+    }
+    &.item5 {
+        background: linear-gradient(to top right, $violet 50%, rgba($violet, 0.7) 50%);
+    }
+}
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+.sales {
+    margin-top: 94px;
+}

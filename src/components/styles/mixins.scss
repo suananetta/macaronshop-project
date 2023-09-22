@@ -1,0 +1,20 @@
+@mixin display-setting($direction, $content, $items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $items;
+}
+
+@mixin proxi-font-setting($weight, $size, $height) {
+    font-family: '__proximanova_c89c36', '__proximanova_Fallback_c89c36';
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}
+
+@mixin montserrat-font-setting($weight, $size, $height) {
+    font-family: '__Montserrat_198ea0', '__Montserrat_Fallback_198ea0';
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}

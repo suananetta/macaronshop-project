@@ -87,4 +87,38 @@ h2 {
 /*-------------------------------------------------------------------------------------------------------------------------------------------*/
 .sales {
     margin-top: 94px;
+    @include display-setting(column, space-between, center);
+}
+.sales-cards {
+    margin-top: 50px;
+    @include display-setting(row, space-between, center);
+}
+.sale-card {
+    position: relative;
+    min-height: 380px;
+    flex: 0 1 23%;
+    border-radius: 5px;
+    @include display-setting(column, flex-end, center);
+    p {
+        padding: 0 20px 30px ;
+        text-align: center;
+        color: $white;
+        @include montserrat-font-setting(400, 16px, normal); 
+    }
+}
+.sale-card-badge {
+    position: absolute;
+    padding: 4px 20px 4px 10px;
+    top: 15px;
+    left: 0;
+    -webkit-clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
+            clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
+    span {
+        color: $white;
+        @include montserrat-font-setting(400, 16px, normal); 
+    } 
+}
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+.holidays {
+    margin-top: 142px;
 }

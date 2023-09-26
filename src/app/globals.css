@@ -29,4 +29,7 @@ a {
 a:hover {
   font-weight: 600;
 }
-
+button:hover {
+  cursor: pointer;
+  
+}

@@ -3,8 +3,7 @@ import Image from "next/image"
 import './styles.min.css'
 import LinkCard from "./Cards/LinkCard/LinkCard"
 import SaleCard from "./Cards/SaleCard/SaleCard"
-
-import '../../../public/sale-caramel.png'
+import Button from "../_shared/Button/Button"
 
 export default function Home() {
   
@@ -72,10 +71,45 @@ export default function Home() {
     },
   ]
 
+  let holidayIcons = [
+    '/holiday-hb.svg',
+    '/holiday-green.svg',
+    '/holiday-pink.svg',
+    '/holiday-orange.svg',
+  ]
+
+  let holidays = [
+    {
+      date: 'Скоро',
+      event: 'День рождения близкого человека'
+    },
+    {
+      date: '1 января',
+      event: 'Новый Год 2021'
+    },
+    {
+      date: '14 февраля',
+      event: 'День Святого Валентина'
+    },
+    {
+      date: '23 февраля',
+      event: 'День Защитника Отечества'
+    },
+    {
+      date: '8 марта',
+      event: 'Международный Женский День',
+    },
+    {
+      date: '9 марта',
+      event: 'День Сурка',
+    }
+  ]
+
     return (
       <main>
         <div className="container">
-          <section className="intro">
+
+          <section className="section-intro">
             <div className="intro-info">
               <h3>Macaronshop</h3>
               <div className="intro-info-item"><hr />since 2013<hr /></div>
@@ -84,18 +118,76 @@ export default function Home() {
               <p>Пирожные макарон и другие десерты из натуральных ингредиентов, приготовленные с любовью</p>
             </div>
           </section>
-          <section className="links">
+
+          <section className="section-links">
             <LinkCard cardsArr={linkCards}/>
           </section>
-          <section className="sales">
+
+          <section className="section-sales">
             <h2>Акции</h2>
             <div className="sales-cards">
               <SaleCard cardsArr={salesCards}/>
             </div>
+            <div className="sales-buttons">
+              <Button
+                btnClass='sale-btn active'
+                btnName=''
+                disabled={false}
+                // onClick={}
+              />
+              <Button
+                btnClass='sale-btn'
+                btnName=''
+                disabled={false}
+                // onClick={}
+              />
+              <Button
+                btnClass='sale-btn'
+                btnName=''
+                disabled={false}
+                // onClick={}
+              />
+            </div>
           </section>
-          <section className="holidays">
-            <h2>Ближайшие праздники</h2>
 
+          <section className="section-holidays">
+            <h2>Ближайшие праздники</h2>
+            <hr />
+            <div className="holidays-macarons">
+              <Image src="/holiday-orange.svg" width={77} height={59} alt="" />
+              <Image src="/holiday-green.svg" width={62} height={47} alt="" />
+              <Image src="/holiday-pink.svg" width={62} height={47} alt="" />
+              <Image src="/holiday-orange.svg" width={62} height={47} alt="" />
+              <Image src="/holiday-green.svg" width={62} height={47} alt="" />
+              <Image src="/holiday-pink.svg" width={62} height={47} alt="" />
+            </div>
+            <div className="holidays-items">
+              {
+                holidays.map(item => {
+                  if (item.event.includes('День рождения')) {
+                    return (
+                      <div className="holidays-item">
+                        <Image className="party-hat" src="/holiday-party-hat.svg" width={52} height={81} alt="" />
+                        <span>{item.date}</span>
+                        <span>{item.event}</span>
+                      </div>
+                    )
+                  } else {
+                    return (
+                      <div className="holidays-item">
+                        <span>{item.date}</span>
+                        <span>{item.event}</span>
+                      </div>
+                    )
+                  }
+                })
+              }
+              
+            </div>
+          </section>
+
+          <section className="section-popular-sets">
+            <h2>Популярные наборы</h2>
           </section>
         </div>
       </main>
